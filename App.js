@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen';
 import ReportScreen from './screens/ReportScreen';
+import NotificationsScreen from './screens/NotificationsScreen'
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ export default function App() {
            presentation: 'card', }}>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Report" component={ReportScreen} />
+        <Stack.Screen name="Notifications" component={NotificationsScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>
