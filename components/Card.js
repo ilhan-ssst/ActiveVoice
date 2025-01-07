@@ -2,7 +2,16 @@ import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-export default function Card({ title, iconName, onPress }) {
+
+const statusColors = {
+  Reported: '#FF9500', // Orange
+  'In Progress': '#007AFF', // Blue
+  Done: '#4CD964', // Green
+};
+
+
+
+export default function Card({ title, iconName, onPress, status }) {
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
       <View style={styles.iconContainer}>
@@ -10,6 +19,12 @@ export default function Card({ title, iconName, onPress }) {
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>{title}</Text>
+      </View>
+      <View style={styles.statusContainer}>
+      <Text 
+        style={[styles.status, { color: statusColors[status] || '#333' }]}>
+        {status}
+    </Text>
       </View>
     </TouchableOpacity>
   );
@@ -46,5 +61,14 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: '#333',
+  },
+  statusContainer: {
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
+  status: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#007AFF',
   },
 });

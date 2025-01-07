@@ -5,7 +5,9 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 export default function Header() {
   return (
     <View style={styles.header}>
-        <Text style={{fontWeight: 'bold', fontSize: 28}}>ActiveVoice</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 28, color: 'orange'}}>Active</Text>
+        <Text style={{fontWeight: 'bold', fontSize: 28, color: 'lightblue'}}>Voice</Text>
+
     </View>
   );
 }
